@@ -1,0 +1,11 @@
+<form (submit)="onSubmit($event)">
+  <div class="form-group">
+    <input
+      [(ngModel)]="todo.title"
+      type="text"
+      class="form-control"
+      placeholder="Create a new todo.."
+      name="title"
+    />
+  </div>
+</form>

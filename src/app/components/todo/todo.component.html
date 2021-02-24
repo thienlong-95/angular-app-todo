@@ -1,0 +1,28 @@
+<div *ngFor="let todo of todos">
+  <form (submit)="onSubmit($event)">
+    <div class="todo-item">
+      <div class="input-edit" *ngIf="todo.isOpen">
+        <input type="text" [(ngModel)]="titleEdit" name="titleEdit" />
+        <button type="button" class="btn" (click)="sendEdit(todo.id)">
+          Done
+        </button>
+      </div>
+      <label class="container1">
+        <input
+          type="checkbox"
+          name="checkBox"
+          (change)="setChange(todo.isChecked, todo.id)"
+        />
+        <span class="checkmark"></span>
+      </label>
+
+      <p [class.todo-done]="todo.isChecked">{{ todo.title }}</p>
+      <button type="button" class="btn" (click)="setOpen(todo.id, todo.isOpen)">
+        Edit
+      </button>
+      <button type="button" class="btn" (click)="deleteTodo.emit(todo.id)">
+        Delete
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<app-add-todo (messageTodo)="receiveMessage($event)"></app-add-todo>
+<div class="container">
+  <app-todo
+    [todos]="todos"
+    (deleteTodo)="receiveTodoId($event)"
+    (editTodo)="receiveEditTodo($event)"
+  ></app-todo>
+</div>
